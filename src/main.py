@@ -13,8 +13,8 @@ from src.algorithms.astar import astar
 def main():
     print(" === 8-Puzzle AI solver === ")
     # test cases
-    initial_state = (1, 2, 3, 4, 5, 6, 7, 0, 8)
-    print(f"Initial state : {initial_state}")
+    initial_state = (1,2,3,4,5,6,0,7,8)
+    print (f"Initial state : {initial_state}")
 
     # setup problem 
     problem = EightPuzzle(initial_state)
