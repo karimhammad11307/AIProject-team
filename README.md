@@ -68,9 +68,4 @@ Our comprehensive analysis compares the algorithms based on the required metrics
 │   ├── ucs.py                 # Uniform-Cost Search Implementation
 │   ├── astar.py               # A* Search with Manhattan Distance
 │   └── hill_climbing.py       # Hill Climbing Implementation
-├── tests/
-│   └── test_puzzles.py        # Scripts with predefined puzzle states for comparison
-├── analysis/
-│   └── results_analysis.md    # Detailed comparative analysis and results
-├── requirements.txt           # Python dependencies (if any)
 └── README.md                  # Project Documentation
