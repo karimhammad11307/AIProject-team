@@ -1,6 +1,19 @@
 # 8-Puzzle Solver: AI Search Algorithms
 **Artificial Intelligence Course Project**
 
+## 👥 Team Members
+| Name | Student ID |
+|------|------------|
+| كريم محمد سعيد حماد | 2023157 |
+| محمود محمد السيد عمر الشوريجي | 2023394 |
+| احمد محمد عبدالرؤوف الخولي | 2023282 |
+| مؤمن علاء نصر الجزار | 2023235 |
+| عبدالرحمن ايمن فتوج الشريف | 2023128 |
+| محمد عادل علي ناصف | 2023370 |
+| حاتم ايمن فضل علي | 2023066 |
+| يوسف محمد شرف الخولي | 2023257 |
+| علي اشرف علي مهنا | 2023623 |
+
 ## 📌 Project Overview
 This project implements a comprehensive framework for solving the classic **8-Puzzle** game using various Artificial Intelligence search strategies. 
 
