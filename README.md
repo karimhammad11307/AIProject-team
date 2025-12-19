@@ -1,32 +1,71 @@
-# AI Project-team
-AI project for university using search algorithms
-still working on it so expect unfinished parts
 # 8-Puzzle Solver: AI Search Algorithms
+**Artificial Intelligence Course Project**
 
 ## 📌 Project Overview
-This project implements a comprehensive framework for solving the classic **8-Puzzle** game using various Artificial Intelligence search strategies.
+This project implements a comprehensive framework for solving the classic **8-Puzzle** game using various Artificial Intelligence search strategies. 
 
-[cite_start]The primary objective is to analyze and compare the performance of different search algorithms in terms of **time complexity**, **space complexity**, and **solution optimality**[cite: 4, 10]. This project serves as a practical application of fundamental AI concepts as part of the Introduction to Artificial Intelligence course.
+The primary objective is to provide hands-on experience in implementing and evaluating fundamental search algorithms. By applying these algorithms to the 8-Puzzle, we gain a deeper understanding of their theoretical underpinnings, practical applications, and performance trade-offs.
+
+We have successfully applied the required algorithms to the chosen problem domain and conducted a comparative analysis focusing on key metrics such as **time complexity**, **space complexity**, **solution optimality**, and **path cost**.
+
+---
 
 ## 🧩 The Problem: 8-Puzzle
-The 8-puzzle is a sliding puzzle that consists of a 3x3 frame of numbered square tiles (1-8) in random order with one tile missing. [cite_start]The object of the puzzle is to place the tiles in order by making sliding moves that use the empty space[cite: 18].
+The **8-puzzle** is a sliding puzzle that consists of a 3x3 frame of numbered square tiles (1-8) in random order with one tile missing. 
 
-## 🚀 Features & Algorithms
-[cite_start]This framework implements the following search strategies as required by the project proposal[cite: 23, 24, 26]:
+* **Objective:** Place the tiles in the correct order by making sliding moves that use the empty space.
+* **Goal State:** `(1, 2, 3, 4, 5, 6, 7, 8, 0)`
+* **Significance:** This problem presents a manageable yet non-trivial state space, ideal for analyzing and comparing search algorithm performance.
+
+---
+
+## 🚀 Features & Algorithms Implemented
+This framework implements all the required search strategies as outlined in the project proposal.
 
 ### Uninformed Search Strategies
-1.  [cite_start]**Breadth-First Search (BFS):** Explores the neighbor nodes first, before moving to the next level neighbors[cite: 25].
-2.  [cite_start]**Depth-First Search (DFS):** Explores as far as possible along each branch before backtracking[cite: 25].
-3.  [cite_start]**Iterative Deepening Search (IDS):** A state space search strategy in which a depth-limited search is run repeatedly, increasing the depth limit with each iteration[cite: 28].
+1.  **Breadth-First Search (BFS):** * Explores the shallowest nodes first using a FIFO queue.
+    * Guarantees an optimal (shortest-move) solution.
+2.  **Depth-First Search (DFS):** * Explores as far as possible along each branch before backtracking using a LIFO stack.
+    * Memory efficient but not guaranteed to find the shortest path.
+3.  **Iterative Deepening Search (IDS):** * Runs depth-limited searches repeatedly, increasing the depth limit with each iteration.
+    * Combines the benefits of BFS (completeness, optimality) with the memory efficiency of DFS.
+4.  **Uniform-Cost Search (UCS):** * Expands the least-cost unexpanded node using a priority queue. 
+    * For the 8-puzzle (where all moves cost 1), UCS behaves identically to BFS but is structured to handle variable costs.
 
 ### Informed Search Strategies
-4.  [cite_start]**Uniform-Cost Search (UCS):** Expands the least-cost unexpanded node[cite: 27].
-5.  **A* Search (A-Star):** Uses a heuristic function to guide the search.
-    * [cite_start]**Heuristic Used:** Manhattan Distance (Sum of the vertical and horizontal distances of the tiles from their goal positions)[cite: 29].
-6.  **Hill Climbing:** A local search algorithm that continuously moves in the direction of increasing value/decreasing cost.
+5.  **A* Search (A-Star):** * Uses a heuristic function to guide the search for the optimal path.
+    * **Heuristic Used:** *Manhattan Distance* – The sum of the vertical and horizontal distances of each tile from its goal position.
+6.  **Hill Climbing:** * A local search algorithm that continuously moves to the neighbor state with the lowest heuristic cost (steepest descent). 
+    * Serves as a practical example of greedy, heuristic-driven search (though it may get stuck in local optima).
+
+---
+
+## 📊 Performance Analysis & Results
+Our comprehensive analysis compares the algorithms based on the required metrics. Key findings include:
+
+| Metric | BFS / UCS | DFS | IDS | A* (Manhattan) | Hill Climbing |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Optimality** | ✅ Yes | ❌ No | ✅ Yes | ✅ Yes | ❌ No |
+| **Completeness**| ✅ Yes | ⚠️ Risk | ✅ Yes | ✅ Yes | ⚠️ Risk |
+| **Speed** | Slow | Fast | Medium | ⚡ Very Fast | ⚡ Instant |
+| **Memory** | High | Low | Low | Medium | Low |
+
+* **Trade-offs:** BFS/UCS are optimal but memory-heavy. DFS/IDS are memory-efficient but DFS isn't optimal.
+* **Efficiency:** A* is typically the most efficient, finding the optimal path while expanding significantly fewer nodes than BFS.
+* **Local Optima:** Hill Climbing is very fast per step but may fail to solve the puzzle entirely if it hits a plateau.
+
+---
 
 ## 📂 Project Structure
-The repository is organized as follows:
 
-
-└── README.md             # Project documentation
+```text
+8-puzzle-ai-project/
+├── src/
+│   ├── eight_puzzle.py        # Core `EightPuzzle` class (State, Goal Check, Successors)
+│   ├── bfs.py                 # Breadth-First Search Implementation
+│   ├── dfs.py                 # Depth-First Search Implementation
+│   ├── ids.py                 # Iterative Deepening Search Implementation
+│   ├── ucs.py                 # Uniform-Cost Search Implementation
+│   ├── astar.py               # A* Search with Manhattan Distance
+│   └── hill_climbing.py       # Hill Climbing Implementation
+└── README.md                  # Project Documentation
