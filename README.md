@@ -67,6 +67,8 @@ Our comprehensive analysis compares the algorithms based on the required metrics
 * **Efficiency:** A* is typically the most efficient, finding the optimal path while expanding significantly fewer nodes than BFS.
 * **Local Optima:** Hill Climbing is very fast per step but may fail to solve the puzzle entirely if it hits a plateau.
 
+* PDF and Report Link : https://drive.google.com/file/d/1TomqEu26TJmT7YdQGpXPwRuxMpyHkttb/view?usp=sharing
+
 ---
 
 ## 📂 Project Structure
@@ -82,3 +84,5 @@ Our comprehensive analysis compares the algorithms based on the required metrics
 │   ├── astar.py               # A* Search with Manhattan Distance
 │   └── hill_climbing.py       # Hill Climbing Implementation
 └── README.md                  # Project Documentation
+
+
